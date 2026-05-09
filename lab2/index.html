@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Lab 2</title>
+</head>
+<body>
+
+<h2>Лабораторна робота №2</h2>
+<p>Відкрити консоль: F12 → Console</p>
+
+<script>
+
+// ---------------- CARS ----------------
+
+let car1 = new Object();
+
+car1.color = "blue";
+car1.maxSpeed = 180;
+
+car1.driver = new Object();
+car1.driver.name = "Andrii Kochkodan";
+car1.driver.category = "C";
+car1.driver["personal limitations"] = "No driving at night";
+
+car1.tuning = true;
+car1["number of accidents"] = 1;
+
+let car2 = {
+    color: "white",
+    maxSpeed: 220,
+
+    driver: {
+        name: "John Smith",
+        category: "B",
+        ["personal limitations"]: null
+    },
+
+    tuning: false,
+    ["number of accidents"]: 3
+};
+
+car1.drive = function () {
+    console.log("I am not driving at night");
+};
+
+car2.drive = function () {
+    console.log("I can drive anytime");
+};
+
+car1.drive();
+car2.drive();
+
+// ---------------- TRUCK ----------------
+
+function Truck(color, weight, avgSpeed, brand, model) {
+
+    this.color = color;
+    this.weight = weight;
+    this.avgSpeed = avgSpeed;
+    this.brand = brand;
+    this.model = model;
+
+    this.trip = function () {
+
+        if (!this.driver) {
+            console.log("No driver assigned");
+        }
+
+        else {
+
+            let text = "Driver " + this.driver.name + " ";
+
+            if (this.driver.nightDriving) {
+                text += "drives at night ";
+            }
+
+            else {
+                text += "does not drive at night ";
+            }
+
+            text += "and has " + this.driver.experience + " years of experience";
+
+            console.log(text);
+        }
+    };
+}
+
+Truck.prototype.AssignDriver = function(name, nightDriving, experience) {
+
+    this.driver = {
+        name: name,
+        nightDriving: nightDriving,
+        experience: experience
+    };
+};
+
+let truck1 = new Truck("black", 3000, 90, "Ford", "F150");
+let truck2 = new Truck("green", 4500, 75, "MAN", "TGX");
+
+truck1.AssignDriver("Andrii Kochkodan", true, 4);
+truck2.AssignDriver("Michael Jordan", false, 10);
+
+truck1.trip();
+truck2.trip();
+
+// ---------------- SQUARE ----------------
+
+class Square {
+
+    constructor(a) {
+        this.a = a;
+    }
+
+    static help() {
+        console.log("Square: four equal sides and four right angles.");
+    }
+
+    length() {
+        console.log("Perimeter =", this.a * 4);
+    }
+
+    square() {
+        console.log("Area =", this.a * this.a);
+    }
+
+    info() {
+
+        console.log("Sides:", this.a, this.a, this.a, this.a);
+        console.log("Angles: 90 90 90 90");
+
+        this.length();
+        this.square();
+    }
+}
+
+// ---------------- RECTANGLE ----------------
+
+class Rectangle extends Square {
+
+    constructor(a, b) {
+
+        super(a);
+        this.b = b;
+    }
+
+    static help() {
+        console.log("Rectangle: opposite sides are equal.");
+    }
+
+    length() {
+        console.log("Perimeter =", 2 * (this.a + this.b));
+    }
+
+    square() {
+        console.log("Area =", this.a * this.b);
+    }
+
+    info() {
+
+        console.log("Sides:", this.a, this.b, this.a, this.b);
+        console.log("Angles: 90 90 90 90");
+
+        this.length();
+        this.square();
+    }
+}
+
+// ---------------- RHOMBUS ----------------
+
+class Rhombus extends Square {
+
+    constructor(a, alpha, beta) {
+
+        super(a);
+
+        this.alpha = alpha;
+        this.beta = beta;
+    }
+
+    static help() {
+        console.log("Rhombus: all sides are equal.");
+    }
+
+    length() {
+        console.log("Perimeter =", 4 * this.a);
+    }
+
+    square() {
+
+        let area = this.a * this.a *
+            Math.sin(this.alpha * Math.PI / 180);
+
+        console.log("Area =", area);
+    }
+
+    info() {
+
+        console.log("Sides:", this.a, this.a, this.a, this.a);
+
+        console.log(
+            "Angles:",
+            this.alpha,
+            this.beta,
+            this.alpha,
+            this.beta
+        );
+
+        this.length();
+        this.square();
+    }
+
+    get side() {
+        return this.a;
+    }
+
+    set side(value) {
+        this.a = value;
+    }
+
+    get bigAngle() {
+        return this.alpha;
+    }
+
+    set bigAngle(value) {
+        this.alpha = value;
+    }
+
+    get smallAngle() {
+        return this.beta;
+    }
+
+    set smallAngle(value) {
+        this.beta = value;
+    }
+}
+
+// ---------------- PARALLELOGRAM ----------------
+
+class Parallelogram extends Rectangle {
+
+    constructor(a, b, alpha, beta) {
+
+        super(a, b);
+
+        this.alpha = alpha;
+        this.beta = beta;
+    }
+
+    static help() {
+        console.log("Parallelogram: opposite sides and angles are equal.");
+    }
+
+    square() {
+
+        let area = this.a * this.b *
+            Math.sin(this.alpha * Math.PI / 180);
+
+        console.log("Area =", area);
+    }
+
+    info() {
+
+        console.log(
+            "Sides:",
+            this.a,
+            this.b,
+            this.a,
+            this.b
+        );
+
+        console.log(
+            "Angles:",
+            this.alpha,
+            this.beta,
+            this.alpha,
+            this.beta
+        );
+
+        this.length();
+        this.square();
+    }
+}
+
+// ---------------- HELP METHODS ----------------
+
+Square.help();
+Rectangle.help();
+Rhombus.help();
+Parallelogram.help();
+
+// ---------------- OBJECTS ----------------
+
+let square1 = new Square(5);
+
+let rectangle1 = new Rectangle(4, 8);
+
+let rhombus1 = new Rhombus(6, 120, 60);
+
+let parallelogram1 = new Parallelogram(7, 5, 110, 70);
+
+square1.info();
+rectangle1.info();
+rhombus1.info();
+parallelogram1.info();
+
+// ---------------- TRIANGULAR ----------------
+
+function Triangular(a = 3, b = 4, c = 5) {
+
+    return { a, b, c };
+}
+
+console.log(Triangular());
+
+console.log(Triangular(5, 7, 8));
+
+console.log(Triangular(10, 12, 15));
+
+// ---------------- PI MULTIPLIER ----------------
+
+function PiMultiplier(number) {
+
+    return function () {
+
+        return Math.PI * number;
+    };
+}
+
+let multiplyBy2 = PiMultiplier(2);
+
+let multiplyByOneAndHalf = PiMultiplier(3 / 2);
+
+let divideBy2 = PiMultiplier(1 / 2);
+
+console.log(multiplyBy2());
+
+console.log(multiplyByOneAndHalf());
+
+console.log(divideBy2());
+
+// ---------------- PAINTER ----------------
+
+function Painter(color) {
+
+    return function (obj) {
+
+        if (obj.type !== undefined) {
+
+            console.log(color + " " + obj.type);
+        }
+
+        else {
+
+            console.log("No 'type' property occurred!");
+        }
+    };
+}
+
+let PaintBlue = Painter("Blue");
+
+let PaintRed = Painter("Red");
+
+let PaintYellow = Painter("Yellow");
+
+let object1 = {
+
+    maxSpeed: 280,
+    type: "Sportcar",
+    color: "magenta"
+};
+
+let object2 = {
+
+    type: "Truck",
+    avgSpeed: 90,
+    loadCapacity: 2400
+};
+
+let object3 = {
+
+    maxSpeed: 180,
+    color: "purple",
+    isCar: true
+};
+
+PaintBlue(object1);
+PaintRed(object1);
+PaintYellow(object1);
+
+PaintBlue(object2);
+PaintRed(object2);
+PaintYellow(object2);
+
+PaintBlue(object3);
+PaintRed(object3);
+PaintYellow(object3);
+
+</script>
+
+</body>
+</html>
