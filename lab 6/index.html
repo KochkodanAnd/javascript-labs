@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lights Out</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Lights Out</h1>
+
+<div class="menu">
+    <button onclick="startGame('a')">Level A</button>
+    <button onclick="startGame('b')">Level B</button>
+    <button onclick="startGame('c')">Level C</button>
+    <button onclick="restartGame()">Restart</button>
+</div>
+
+<p>Moves: <span id="moves">0</span></p>
+<p>Minimum: <span id="minimum">-</span></p>
+
+<div id="board"></div>
+
+<p id="message"></p>
+
+<script src="script.js"></script>
+</body>
+</html>
