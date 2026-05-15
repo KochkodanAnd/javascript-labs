@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+button {
+    padding: 8px 14px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#board {
+    width: 320px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    gap: 5px;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.on {
+    background-color: yellow;
+}
+
+#message {
+    font-weight: bold;
+    font-size: 18px;
+}
