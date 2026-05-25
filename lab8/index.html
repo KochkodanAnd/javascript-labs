@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax лабораторна сторінка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <button class="burger" id="burger">☰</button>
+
+  <nav class="menu" id="menu">
+    <a href="#">🏠 Home</a>
+    <a href="#">🌄 Слайдер</a>
+    <a href="#">📌 Інформація</a>
+    <a href="#">✉️ Звʼязок</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Сучасна адаптивна сторінка</h1>
+
+  <section class="carousel">
+    <div class="slides" id="slides">
+      <img src="https://placehold.co/900x400/6a5acd/ffffff?text=Banner+1" alt="Banner 1">
+      <img src="https://placehold.co/900x400/20b2aa/ffffff?text=Banner+2" alt="Banner 2">
+      <img src="https://placehold.co/900x400/ff7f50/ffffff?text=Banner+3" alt="Banner 3">
+      <img src="https://placehold.co/900x400/9370db/ffffff?text=Banner+4" alt="Banner 4">
+    </div>
+
+    <button class="arrow left" id="prev">❮</button>
+    <button class="arrow right" id="next">❯</button>
+
+    <div class="indicators" id="indicators">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+      <span class="dot" data-slide="3"></span>
+    </div>
+  </section>
+
+  <section class="images-large">
+    <h2>Блок для великих екранів</h2>
+    <img src="https://placehold.co/300x200/483d8b/ffffff?text=Desktop+1" alt="">
+    <img src="https://placehold.co/300x200/008b8b/ffffff?text=Desktop+2" alt="">
+    <img src="https://placehold.co/300x200/d2691e/ffffff?text=Desktop+3" alt="">
+  </section>
+
+  <section class="images-medium">
+    <h2>Блок для середніх екранів</h2>
+    <img src="https://placehold.co/300x200/4682b4/ffffff?text=Tablet+1" alt="">
+    <img src="https://placehold.co/300x200/2e8b57/ffffff?text=Tablet+2" alt="">
+    <img src="https://placehold.co/300x200/b8860b/ffffff?text=Tablet+3" alt="">
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
