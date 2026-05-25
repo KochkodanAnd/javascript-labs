@@ -1,0 +1,33 @@
+{
+    "categoryName": "Смартфони",
+    "items": [
+        {
+            "id": 1,
+            "name": "Samsung Galaxy A55",
+            "shortname": "samsung-a55",
+            "description": "Смартфон із великим екраном, якісною камерою та потужною батареєю.",
+            "price": "15999 грн"
+        },
+        {
+            "id": 2,
+            "name": "iPhone 13",
+            "shortname": "iphone-13",
+            "description": "Смартфон Apple з продуктивним процесором і якісною камерою.",
+            "price": "24999 грн"
+        },
+        {
+            "id": 3,
+            "name": "Xiaomi Redmi Note 13",
+            "shortname": "redmi-note-13",
+            "description": "Доступний смартфон для щоденного використання.",
+            "price": "8999 грн"
+        },
+        {
+            "id": 4,
+            "name": "Motorola Edge 40",
+            "shortname": "motorola-edge-40",
+            "description": "Смартфон із сучасним дизайном і швидкою зарядкою.",
+            "price": "12999 грн"
+        }
+    ]
+}
