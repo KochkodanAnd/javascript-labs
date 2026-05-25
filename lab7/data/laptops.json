@@ -1,0 +1,33 @@
+{
+    "categoryName": "Ноутбуки",
+    "items": [
+        {
+            "id": 1,
+            "name": "Lenovo IdeaPad 3",
+            "shortname": "lenovo-ideapad-3",
+            "description": "Ноутбук для навчання, роботи з документами та перегляду відео.",
+            "price": "17999 грн"
+        },
+        {
+            "id": 2,
+            "name": "Asus VivoBook 15",
+            "shortname": "asus-vivobook-15",
+            "description": "Універсальний ноутбук із хорошою продуктивністю.",
+            "price": "21999 грн"
+        },
+        {
+            "id": 3,
+            "name": "Acer Aspire 5",
+            "shortname": "acer-aspire-5",
+            "description": "Ноутбук для офісної роботи, навчання та програмування.",
+            "price": "23999 грн"
+        },
+        {
+            "id": 4,
+            "name": "MacBook Air M1",
+            "shortname": "macbook-air-m1",
+            "description": "Легкий і продуктивний ноутбук від Apple.",
+            "price": "34999 грн"
+        }
+    ]
+}
