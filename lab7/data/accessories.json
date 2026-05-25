@@ -1,0 +1,33 @@
+{
+    "categoryName": "Аксесуари",
+    "items": [
+        {
+            "id": 1,
+            "name": "Бездротові навушники",
+            "shortname": "wireless-headphones",
+            "description": "Зручні навушники для музики та дзвінків.",
+            "price": "1499 грн"
+        },
+        {
+            "id": 2,
+            "name": "Power Bank 20000 mAh",
+            "shortname": "power-bank",
+            "description": "Портативний зарядний пристрій великої ємності.",
+            "price": "1899 грн"
+        },
+        {
+            "id": 3,
+            "name": "Комп’ютерна мишка",
+            "shortname": "mouse",
+            "description": "Оптична мишка для роботи та навчання.",
+            "price": "499 грн"
+        },
+        {
+            "id": 4,
+            "name": "Клавіатура",
+            "shortname": "keyboard",
+            "description": "Зручна клавіатура для щоденного використання.",
+            "price": "799 грн"
+        }
+    ]
+}
